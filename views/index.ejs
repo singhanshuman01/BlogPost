@@ -7,31 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <% if(locals.m){ %>
-            <%= m %>
-        <% }else{ %>
-            THIS IS HEADER
-        <% } %>
+    <header class="header">
+        <div class="header-content">
+            <% if(locals.m){ %>
+                <%= m %>
+            <% }else{ %>
+                <h1 class="site-title">Welcome to My Blog</h1>
+            <% } %>
+        </div>
     </header>
-    <main>
-        <ul>
-            <% s.forEach(elem => { %>
-                <a href="">
-                    <li>
-                    ID:<%= elem.id %> <br>
-                    Title:<%= elem.title %> <br>
-                    Writer: <%= elem.writer %> <br>
-                </li>
-                </a>
-                
-            <% }) %>
-        </ul>
+    
+    <main class="main-content">
+        <section class="posts">
+            <ul>
+                <% s.forEach(elem => { %>
+                    <li class="post-item">
+                        <a href="#" class="post-link">
+                            <div class="post-info">
+                                <h3 class="post-title">ID: <%= elem.id %></h3>
+                                <p class="post-meta">Title: <%= elem.title %></p>
+                                <p class="post-meta">Writer: <%= elem.writer %></p>
+                            </div>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        </section>
 
-        <form action="" method="get">
-            <input type="submit" value="Create a blog" formaction="/post-blog">
-        </form>
-        
+        <section class="create-blog">
+            <form action="" method="get">
+                <button type="submit" class="create-blog-button" formaction="/post-blog">Create a Blog</button>
+            </form>
+        </section>
     </main>
 
     <script src="script.js"></script>

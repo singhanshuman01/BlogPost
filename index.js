@@ -4,14 +4,15 @@ import path, { dirname } from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import {render} from 'ejs';
+import morgan from 'morgan';
 
 const app = express();
 const PORT = 3000;
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-
+app.use(morgan("combined"));
 app.use(bodyParser.urlencoded({extended:true}));
-express.static(__dirname+"/public/styles");
+app.use(express.static(__dirname+"/public/styles"));
 
 let details = []
 fs.readFile("details.json", "utf-8", (err, data)=>{

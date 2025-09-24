@@ -1,0 +1,113 @@
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.site-title {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Posts List */
+.posts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.post-item {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-item:hover {
+    transform: translateY(-10px);
+}
+
+.post-link {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    color: #333;
+}
+
+.post-info {
+    font-size: 1.1rem;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.post-meta {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Button Styling */
+.create-blog-button {
+    display: inline-block;
+    background-color: #5cb85c;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-blog-button:hover {
+    background-color: #4cae4c;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .main-content {
+        padding: 0 10px;
+    }
+
+    .post-title {
+        font-size: 1.1rem;
+    }
+
+    .create-blog-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
