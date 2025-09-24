@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <% if(locals.m){ %>
+            <%= m %>
+        <% }else{ %>
+            THIS IS HEADER
+        <% } %>
+    </header>
+    <main>
+        <ul>
+            <% s.forEach(elem => { %>
+                <a href="">
+                    <li>
+                    ID:<%= elem.id %> <br>
+                    Title:<%= elem.title %> <br>
+                    Writer: <%= elem.writer %> <br>
+                </li>
+                </a>
+                
+            <% }) %>
+        </ul>
+
+        <form action="" method="get">
+            <input type="submit" value="Create a blog" formaction="/post-blog">
+        </form>
+        
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
