@@ -47,22 +47,22 @@ This project is meant as a learning exercise to practice backend development, ro
 
 Here’s an example of what your folder layout might look like:
 
-BlogPost/
-├── blogs/
-│ └── … (JSON or blog data files)
-├── public/
-│ ├── css/
-│ ├── js/
-│ └── images/
-├── views/
-│ ├── layouts/
-│ ├── partials/
-│ └── templates (e.g. index.ejs, post.ejs, edit.ejs)
-├── .gitignore
-├── details.json
-├── index.js
-├── package.json
-└── package-lock.json
+BlogPost/  
+├── blogs/  
+│ └── … (JSON or blog data files)  
+├── public/  
+│ ├── css/  
+│ ├── js/  
+│ └── images/  
+├── views/  
+│ ├── layouts/  
+│ ├── partials/  
+│ └── templates (e.g. index.ejs, post.ejs, edit.ejs)  
+├── .gitignore  
+├── details.json  
+├── index.js  
+├── package.json  
+└── package-lock.json  
 
 
 - `index.js` — Entry point, Express app setup, routing.  
@@ -91,9 +91,13 @@ Because this project uses ESM (module syntax `import/export`), older Node versio
    git clone https://github.com/singhanshuman01/BlogPost.git
    cd BlogPost
 2. Install dependencies
+   ```bash
    npm install
 3. Start the server:
+   ```bash
    npm start
 Or, if you have configured a custom script (e.g. with nodemon):
+   ```bash
    npm run dev
+```
 Then open your browser and go to http://localhost:3000 (or whichever port is configured) to see the blog app.
