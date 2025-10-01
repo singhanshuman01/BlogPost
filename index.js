@@ -12,7 +12,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(morgan("combined"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/public/styles"));
+app.use(express.static(__dirname + "/public"));
 
 let details = []
 fs.readFile("details.json", "utf-8", (err, data) => {
@@ -56,21 +56,11 @@ app.post("/post-blog", (req, res) => {
     res.redirect("/?success=true");
 });
 
-app.get("/read/:id", (req, res) => {
+app.get("/read/:id", async (req, res) => {
     try {
         const id = req.params.id;
         const blogDetails = details.find(blog => blog.id == id);
-        let content = '';
-        fs.readFile(__dirname + `/blogs/Blog${id}.txt`, 'utf-8', (err, data) => {
-            if (err) console.log(err); 
-            else {
-                console.log(`Opened Blog${id}.txt`);
-                content += data
-                console.log(content);
-            } 
-        });
-        console.log(content);
-        // console.log(content);
+        const content = await fs.promises.readFile(__dirname+`/blogs/Blog${id}.txt`, 'utf-8');
         res.render('viewBlog.ejs', {
             elem: blogDetails,
             content: content
